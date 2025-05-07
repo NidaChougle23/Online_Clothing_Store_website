@@ -2,6 +2,7 @@
     include("includes/connect.php");
     include("functions/common_function.php");
     session_start();
+    include("includes/header.php");
 ?>
 
 <!DOCTYPE html>
@@ -83,49 +84,7 @@
 </head>
 <body>
     
-    <!--navbar-->
-    <div class="container-fluid p-0">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <img src="img/Logo.png" class="logo"/>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="display_all.php">All</a>
-                    </li>
-
-                    <?php getsection_nav(); ?>
-                    
-                    <li class="nav-item">
-                    <div class="">
-                        <a href="cart.php" class="btn border-dark">
-                            <i class="fas fa-shopping-cart cart-blue"></i>
-                            <span class="badge bg-danger"><?php cart_item(); ?></span>
-                        </a>
-                    </div>
-                    </li>
-                    <?php
-                        if(isset($_SESSION['username'])){
-                            echo "<li class='nav-item'>
-                                <a class='nav-link' href='./user_area/profile.php'>My Account</a>
-                                </li>";
-                        }
-                        else{
-                            echo "<li class='nav-item'>
-                                <a class='nav-link' href='./user_area/user_registration.php'>Register</a>
-                                </li>";
-                        }
-                    ?>
-                </ul>
-                </div>
-            </div>
-        </nav>
+    
 
         <!--cart function calling-->
         <?php cart(); ?>
@@ -144,17 +103,7 @@
                     </li>";
                 }
             ?>
-            <?php
-                if(!isset($_SESSION['username'])){
-                    echo "<li class='nav-item'>
-                    <a class='nav-link' href='user_area/user_login.php'><i class='fa fa-sign-in' aria-hidden='true'></i>  Login</a>
-                    </li>";
-                } else {
-                    echo "<li class='nav-item'>
-                    <a class='nav-link' href='user_area/logout.php'><i class='fa fa-sign-out' aria-hidden='true'></i>  Logout</a>
-                    </li>";
-                }
-            ?>
+            
             </ul>
         </nav>
 

@@ -91,7 +91,7 @@
                 <div class="d-grid gap-2">
                     <input type="submit" value="Login" name="user_login" class="btn bg-paradise-pink fw-bold text-white">
                 </div>
-                <p class="small fw-bold mt-3">Don't have an account? <a href="user_registration.php" class="text-danger fw-bold">Register</a></p>
+
                 </form>
             </div>
             </div>
@@ -137,7 +137,7 @@
         <!-- Registration Modal -->
         <div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="registrationModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
+            <div class="modal-content p-4">
             <form action="" method="post" enctype="multipart/form-data">
                 <div class="modal-header">
                 <h5 class="modal-title text-paradise-pink" id="registrationModalLabel">New User Registration</h5>
@@ -197,8 +197,8 @@
                     <input type="text" class="form-control" name="user_contact" id="user_contact" required>
                 </div>
                 </div>
-                <div class="modal-footer">
-                <input type="submit" name="user_register" class="btn bg-paradise-pink fw-bold" value="Register">
+                <div class="d-grid gap-2">
+                <input type="submit" name="user_register" class="btn bg-paradise-pink fw-bold text-white" value="Register">
                 </div>
             </form>
             </div>

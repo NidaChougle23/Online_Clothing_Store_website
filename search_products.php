@@ -2,6 +2,7 @@
     include("includes/connect.php");
     include("functions/common_function.php");
     @session_start();
+    include("includes/header.php");
 ?>
 
 
@@ -19,50 +20,7 @@
     <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body class="bg-soft-light-pink">
-    <!--navbar-->
-    <div class="container-fluid p-0">
-        <!--first child-->
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <img src="img/Logo.png" class="logo"/>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                    <a class="nav-link text-danger fw-bold" aria-current="page" href="index.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="display_all.php">All</a>
-                    </li>
-                    <?php
-                    getsection_nav();
-                    ?>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i><span class="badge bg-danger"><?php cart_item(); ?></span></a>
-                    </li>
-                    <?php
-                        if(isset($_SESSION['username'])){
-                            echo "<li class='nav-item'>
-                                <a class='nav-link' href='./user_area/profile.php'>My Account</a>
-                                </li>";
-                        }
-                        else{
-                            echo "<li class='nav-item'>
-                                <a class='nav-link' href='./user_area/user_registration.php'>Register</a>
-                                </li>";
-                        }
-                    ?>
-                </ul>
-                <form method="get" class="d-flex" role="search p-0">
-                    <input id="search" name="search_data" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button id="isearch" name="search_data_product" class="btn btn-outline-dark" type="submit"><i class="fas fa-search"></i></button>
-                    <!--<input type="submit" id="isearch" class="btn btn-outline-dark" value="" />-->
-                </form>
-                </div>
-            </div>
-        </nav>
+    
 
 
         <!--second child-->
@@ -79,17 +37,7 @@
                         </li>";
                     }
                 ?>
-                <?php
-                    if(!isset($_SESSION['username'])){
-                        echo "<li class='nav-item'>
-                        <a class='nav-link' href='user_area/user_login.php'><i class='fa fa-sign-in' aria-hidden='true'></i>  Login</a>
-                        </li>";
-                    } else {
-                        echo "<li class='nav-item'>
-                        <a class='nav-link' href='user_area/logout.php'><i class='fa fa-sign-out' aria-hidden='true'></i>  Logout</a>
-                        </li>";
-                    }
-                ?>
+                
             </ul>
         </nav>
 
